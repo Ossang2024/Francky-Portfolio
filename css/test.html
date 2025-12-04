@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Motion Design — Portfolio</title>
+  <style>
+    :root{--accent:#1f6feb;--muted:#6b7280;--bg:#f8fafc;--card:#ffffff}
+    *{box-sizing:border-box}
+    body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin:0; background:var(--bg); color:#0f172a}
+    .container{max-width:1100px;margin:40px auto;padding:24px}
+
+    header{display:flex;align-items:center;gap:28px}
+    .logo{font-weight:700;font-size:28px}
+    .slogan{color:var(--muted)}
+
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:24px;margin-top:24px}
+    .hero-left{background:linear-gradient(180deg,#fff,#fbfdff);padding:28px;border-radius:14px;box-shadow:0 6px 18px rgba(15,23,42,0.06)}
+    .hero-left h1{margin:0;font-size:36px}
+    .hero-left p{color:var(--muted);margin-top:12px}
+    .hero-right{display:grid;grid-template-rows:repeat(3,1fr);gap:12px}
+    .thumb{background:#eef2ff;border-radius:10px;display:flex;align-items:center;justify-content:center;height:110px}
+
+    .about{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:28px}
+    .card{background:var(--card);padding:22px;border-radius:12px;box-shadow:0 6px 18px rgba(15,23,42,0.04)}
+    .card h3{margin:0 0 12px 0}
+    .card p{color:var(--muted);line-height:1.5}
+
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
+    .media{height:160px;border-radius:10px;background:linear-gradient(90deg,#fff,#f4f6fb);display:flex;align-items:center;justify-content:center}
+
+    .section-title{margin-top:40px;font-size:20px;font-weight:700}
+    .portfolio{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:18px}
+
+    .video-card{position:relative;border-radius:12px;overflow:hidden;height:220px;background:linear-gradient(135deg,#fff7ed,#fff3e0);display:flex;align-items:center;justify-content:center}
+    .play{position:absolute;width:72px;height:72px;border-radius:50%;background:rgba(0,0,0,0.7);display:flex;align-items:center;justify-content:center;cursor:pointer}
+    .play:after{content:'';display:block;width:0;height:0;border-left:18px solid #fff;border-top:12px solid transparent;border-bottom:12px solid transparent;margin-left:6px}
+
+    .logos{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+    .logo-pill{background:#fff;padding:8px 12px;border-radius:8px;box-shadow:0 4px 10px rgba(2,6,23,0.04);font-size:13px}
+
+    footer{display:flex;align-items:center;justify-content:space-between;margin-top:40px;padding-top:24px;border-top:1px solid rgba(15,23,42,0.06)}
+
+    /* responsive */
+    @media(max-width:900px){
+      .hero{grid-template-columns:1fr;}
+      .hero-right{grid-auto-flow:column;grid-auto-columns:1fr;height:auto}
+      .about{grid-template-columns:1fr}
+      .grid-3{grid-template-columns:1fr}
+      .portfolio{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">Motion Design</div>
+      <div class="slogan">Design & animation • Freelance</div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-left card">
+        <h1>Je suis un freelance designer et art director.</h1>
+        <p>Je réalise des identités visuelles, des redesigns de marque, des vidéos explicatives et des interfaces web animées. Mon approche est simple : clarté, rythme et sens du détail.</p>
+      </div>
+
+      <div class="hero-right">
+        <div class="thumb media">Illustration 1</div>
+        <div class="thumb media">Illustration 2</div>
+        <div class="thumb media">Illustration 3</div>
+      </div>
+    </section>
+
+    <section class="about">
+      <div class="card">
+        <h3>Background</h3>
+        <p>Expérience en direction artistique et production de contenus animés pour startups et agences. J'accompagne les projets de la recherche design jusqu'à la livraison.</p>
+      </div>
+      <div class="card">
+        <h3>Expertise</h3>
+        <p>Motion design, branding, design d'interface, vidéos promotionnelles, et storytelling visuel. Outils : After Effects, Illustrator, Figma.</p>
+      </div>
+    </section>
+
+    <div class="grid-3">
+      <div class="card media">Brand Identity - exemple</div>
+      <div class="card media">Brand Redesign - exemple</div>
+      <div class="card media">Web Design - exemple</div>
+    </div>
+
+    <h2 class="section-title">Projets récents</h2>
+    <div class="portfolio">
+      <div class="card video-card">
+        <div style="width:80%;text-align:center;">Brand Redesign<br><small style="color:var(--muted)">Case study</small></div>
+        <div class="play" onclick="playDemo(this)"></div>
+      </div>
+
+      <div class="card video-card">
+        <div style="width:80%;text-align:center;">Web Design Demo<br><small style="color:var(--muted)">UI animé</small></div>
+        <div class="play" onclick="playDemo(this)"></div>
+      </div>
+    </div>
+
+    <h3 class="section-title">Logo Design</h3>
+    <div class="card" style="display:flex;gap:18px;align-items:center;">
+      <div style="width:120px;height:120px;border-radius:12px;background:linear-gradient(135deg,#e6f0ff,#dfefff);display:flex;align-items:center;justify-content:center;font-weight:700">HEX</div>
+      <div>
+        <p style="margin:0 0 8px 0">Création de logos & systèmes graphiques — marques, produits, apps.</p>
+        <div class="logos">
+          <div class="logo-pill">Client A</div>
+          <div class="logo-pill">Client B</div>
+          <div class="logo-pill">Client C</div>
+          <div class="logo-pill">Client D</div>
+        </div>
+      </div>
+    </div>
+
+    <section style="margin-top:28px;">
+      <div class="card">
+        <h3>J'aide les entreprises à créer une identité claire et mémorable</h3>
+        <p style="color:var(--muted)">Je travaille avec des équipes produit et marketing pour transformer des idées en images, motion et expériences numériques.</p>
+      </div>
+    </section>
+
+    <footer>
+      <div>
+        <strong>Work with me</strong>
+        <div style="color:var(--muted)">contact@motiondesign.example • +237 6X XX XX XX</div>
+      </div>
+      <div style="opacity:0.9">© 2025 Motion Design</div>
+    </footer>
+  </div>
+
+  <script>
+    function playDemo(el){
+      const parent = el.closest('.video-card');
+      // simple demo: toggle a modal-like overlay
+      const overlay = document.createElement('div');
+      overlay.style.position='fixed';overlay.style.left=0;overlay.style.top=0;overlay.style.right=0;overlay.style.bottom=0;overlay.style.display='flex';overlay.style.alignItems='center';overlay.style.justifyContent='center';overlay.style.background='rgba(0,0,0,0.6)';overlay.style.zIndex=9999;
+      const box = document.createElement('div');box.style.width='90%';box.style.maxWidth='900px';box.style.background='#000';box.style.padding='24px';box.style.borderRadius='12px';box.style.boxShadow='0 10px 40px rgba(2,6,23,0.6)';
+      box.innerHTML = '<div style="color:#fff;font-weight:700;margin-bottom:12px">Aperçu vidéo</div><div style="background:#111;height:420px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#aaa">Video player (demo)</div>';
+      overlay.appendChild(box);
+      overlay.onclick=function(e){ if(e.target===overlay) overlay.remove(); }
+      document.body.appendChild(overlay);
+    }
+  </script>
+</body>
+</html>
